@@ -1,6 +1,8 @@
-@extends('layout.dashboardLayout2')
+@extends('layout.dashboardLayout')
 
 @section('content')
+
+
 	<h2 class="menu__header">Selamat Datang</h2>
 	<div class="row">
 		<div class="col-md-4">
@@ -31,7 +33,7 @@
 	@endif
 	@if(Auth::user()->level != 'adminskpd')
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<a href="{{URL::to('emonevpanel/skpd')}}"><div class="box__section">
 				<h3>Perangkat Daerah</h3>
 			</div></a>
@@ -46,7 +48,7 @@
 				<h3>Tahun Baru</h3>
 			</div></a>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-4">
 			<a href="{{URL::to('emonevpanel/realisasi')}}"><div class="box__section">
 				<h3>Realisasi Keuangan</h3>
 			</div></a>
@@ -59,9 +61,10 @@
 			</div></a>
 		</div>
 	</div>
+
+
 	<div class="row">
-
-
 	</div>
 	@endif
+	
 @endsection

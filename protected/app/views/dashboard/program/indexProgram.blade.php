@@ -1,8 +1,8 @@
-@extends('layout.dashboardLayout2')
+@extends('layout.dashboardLayout')
 
 @section('content')
 	<h2 class="menu__header">Program Perangkat Daerah</h2>
-	<button class="btn btn-primary" style="float:right;" id="btnAddProgram">Tambah Program</button>
+	<button class="btn btn-primary" style="float:right;margin-top:10px;" id="btnAddProgram">Tambah Program</button>
 
 	<!-- FORM ADD PROGRAM -->
 	<form action="{{URL::to('emonevpanel/program/insert')}}" method="POST" role="form" style="display:none;" data-toggle="validator" id="formAddProgram">
@@ -48,7 +48,7 @@
 	</form> <!-- END FORM ADD PROGRAM -->
 
 	<!-- FORM EDIT PROGRAM -->
-	<form action="{{URL::to('emonevpanel/program/update')}}" method="POST" data-toggle="validator" id="formEditProgram" style="display:none">
+	<form action="{{URL::to('emonevpanel/program/update')}}" method="POST" data-toggle="validator" id="formEditProgram" style="display:none;">
 		<legend style="padding-bottom:10px;">Edit Program <i class="fa fa-times icon__close"></i></legend>
 		<!-- Input SKPD -->
 		<input type="hidden" id="inputEditID" name="id">

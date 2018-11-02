@@ -3,14 +3,16 @@
 @section('content')
 	<h2 class="menu__header">Kegiatan Perangkat Daerah</h2>
 	<!-- FORM ADD KEGIATAN -->
-	<legend>Tambah Kegiatan</legend>
+	
 	<form action="" method="POST" role="form" data-toggle="validator">
+		<legend>Tambah Kegiatan</legend>
 		<!-- Input SKPD -->
 		<div class="form-group">
+			<div class="col-md-12">
 			<label for="">Perangkat Daerah</label>
 			<!-- Jika Masuk bukan sebagai Admin SKPD (root || supeadmin) -->
 			@if(Auth::user()->level != 'adminskpd')
-				<select name="skpd_id" id="selectSkpdGetProgramAndKpaOption" class="form-control selectpicker" data-live-search="true" required>
+		<select name="skpd_id" id="selectSkpdGetProgramAndKpaOption" class="form-control selectpicker" data-live-search="true" required>
 					<option value="">------ Pilih Perangkat Daerah ----------</option>
 					<!-- Menampilkan Semua SKPD -->
 					@foreach($Skpd as $skpd)
@@ -22,6 +24,7 @@
 				<input type="text" name="skpd" class="form-control" value="{{$Skpd->skpd}}" disabled="true">
 				<input type="hidden" name="skpd_id" value="{{$Skpd->id}}">
 			@endif
+		</div>
 		</div> <!-- End Input SKPD -->
 		<div class="row">
 			<div class="col-md-4">

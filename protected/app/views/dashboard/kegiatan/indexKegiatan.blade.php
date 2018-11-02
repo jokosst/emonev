@@ -2,17 +2,17 @@
 
 @section('content')
 	<h2 class="menu__header">Kegiatan Perangkat Daerah</h2>
-	<a href="{{URL::to('emonevpanel/kegiatan/create')}}" class="btn btn-primary" style="float:right;">Tambah Kegiatan</a>
+	<a href="{{URL::to('emonevpanel/kegiatan/create')}}" class="btn btn-primary" style="float:right;margin-top:10px;">Tambah Kegiatan</a>
 
 	<!-- FORM SORTIR KEGIATAN -->
-	<form action="" class="form-inline" method="GET" role="form" data-toggle="validator">
+	<form action="" class="form-inline" method="GET" role="form" data-toggle="validator" >
 		<legend>Sortir Kegiatan</legend>
 		<!-- Jika Masuk BUKAN sebagai admin skpd maka ada pilihan memilih SKPD -->
 		@if(Auth::user()->level != 'adminskpd')
 		<div class="form-group">
 			<label for="">Perangkat Daerah</label>
 				<select name="skpd_id" class="form-control" required>
-					<option value="">------ Pilih SKPD ----------</option>
+					<option value="">------ Pilih Perangkat Daerah ----------</option>
 					<!-- Menampilkan Semua SKPD -->
 					@foreach($Skpd as $skpd)
 						<option @if(isset($skpd_id) && $skpd_id == "$skpd->id") selected  @endif value="{{$skpd->id}}">{{$skpd->skpd}}</option>
@@ -43,6 +43,8 @@
 	<!-- Margin Bottom -->
 	<div style="margin-bottom:30px;"></div>
 	<!-- Menampilkan konten Kegiatan pada tabel -->
+
+
 	<table id="table_id" class="table table-striped">
 	  <thead>
       <tr>
