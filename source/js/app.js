@@ -111,18 +111,7 @@ $(document).ready(function() {
 	})
 
 	/* onChange Jenis Belanja */
-	$("#jenis_belanja").change(function() {
-		$("#blp, #blnp, #btlp, #hitungBl").hide();
-		$("input[name='blp'], input[name='blnp'], input[name='btlp'], #pagu").val("");
-		var jb = $(this).val();
-		if(jb == 'bl') {
-			$("#blp, #blnp, #hitungBl").show();
-		} else if(jb = 'btl') {
-			$("#btlp").show();
-			$("select[name='program_id']").html("<option value=''>-- Kosong --</option>");
-			$("select[name='program_id']").selectpicker('refresh');
-		}
-	});
+	
 
 	/* hitung BL */
 	$("#hitungBl").click(function() {
@@ -133,14 +122,9 @@ $(document).ready(function() {
 		$("input[name='pagu']").val(total);
 		return false;
 	});
+	
 
-	/* keyup BTL */
-	$("input[name='btlp']").keyup(function() {
-		var btlp = Number($(this).val().replace(/[Rp.]+/g,""));
-		$("#pagu").maskMoney('mask',btlp);
-		$("input[name='pagu']").val(btlp);
-	});
-
+	
 	/* onChange Jabatan  */
 	$("#selectJabatan").change(function() {
 		var jabatan = $(this).val();
@@ -150,5 +134,7 @@ $(document).ready(function() {
 			$("#operatorJabatan").hide();
 		}
 	});
+
+	
 
 });

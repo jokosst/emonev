@@ -91,7 +91,7 @@
 </div>
 </section>
 	
-	<footer style="position: fixed;bottom: 0px;width: 100%;">
+	<footer style="position: static;bottom: 0px;width: 100%;">
 		<p>Copyright 2013 - {{date("Y")}} Bagian Pembangunan Sekretariat Daerah Kabupaten Sanggau</p>
 	</footer>
 

@@ -86,7 +86,7 @@
 			<!-- Input Pagu -->
 			<div class="form-group">
 				<label for="">Pagu Paket</label>
-				<input type="text" class="form-control setMoney" name="pagu_paket"  placeholder="Rp" required>
+				<input type="text" class="form-control setMoney" name="pagu_paket" id="pagu" placeholder="Rp" required>
 				<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
 			</div>
 			<!-- END Input Pagu  -->
@@ -119,10 +119,10 @@
 		<!-- Col-md-4 -->
 		<div class="col-md-4">
 			<!-- Input Satuan Volume -->
-			<div class="form-group">
+			<!-- <div class="form-group" id="satuanvolume">
 				<label for="">Satuan Volume</label>
 				<input type="text" name="satuan_volume" class="form-control"  placeholder="Satuan Volume" required>
-			</div>
+			</div> -->
 			<!-- END Input Satuan Volume  -->
 		</div>
 		<!-- End Col-md-4 -->
@@ -146,15 +146,25 @@
 		<!-- Col-md-6 -->
 		<div class="col-md-6">
 			<!-- Input Kualifikasi Lelang -->
-			<div class="form-group">
+			<div class="form-group" id="kualifikasi1">
 				<label for="">Kualifikasi Lelang</label>
 				<select name="kualifikasi_lelang" class="form-control">
 					<option value="kecil">Kecil</option>
+				</select>
+			</div>
+			<!-- End Input Kualifikasi Lelang -->
+		</div>
+		<div class="col-md-6">
+			<!-- Input Kualifikasi Lelang -->
+			<div class="form-group" id="kualifikasi2">
+				<label for="">Kualifikasi Lelang</label>
+				<select name="kualifikasi_lelang" class="form-control">
 					<option value="non-kecil">Non Kecil</option>
 				</select>
 			</div>
 			<!-- End Input Kualifikasi Lelang -->
 		</div>
+
 		<!-- End Col-md-6 -->
 	</div>
 	<!-- End ROW -->
@@ -273,7 +283,20 @@
 			}
 		});
 	});
-
+$("#kualifikasi2").hide();
+$("#satuanvolume").hide();
+/* onjenis pagu  */
+	$("#pagu").change(function() {
+		
+		var pagu = Number($(this).val().replace(/[Rp.]+/g,""));
+		if(pagu <= "2500000000") {
+			$("#kualifikasi1").show();
+			$("#kualifikasi2").hide();
+		} else {
+			$("#kualifikasi1").hide();
+			$("#kualifikasi2").show();
+		}
+	});
 </script>
 
 @stop

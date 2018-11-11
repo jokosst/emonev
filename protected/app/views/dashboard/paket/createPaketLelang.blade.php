@@ -40,7 +40,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 					<label for="">Jenis Proses Pengadaan</label>
-					<select name="jenis_proses_lelang" class="form-control">
+					<select name="jenis_proses_lelang" id="jenis_proses_lelang" class="form-control">
 						<option value="">--- Pilih Jenis Proses Pengadaan ----</option>
 						<option value="e-tendering">Tender</option>
 						<option value="e-purchasing">E-Purchasing</option>
@@ -68,7 +68,7 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group" id="hps">
 					<label for="">HPS</label>
 					<input type="text" name="hps" class="form-control setMoney" placeholder="Rp" required>
 					<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
@@ -96,7 +96,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="form-group">
+				<div class="form-group" id="status1">
 					<label for="">Status</label>
 					<select name="status" class="form-control">
 						<option value="belum-mengajukan-dokumen-tender">Belum Mengajukan Dokumen Tender</option>
@@ -105,6 +105,16 @@
 						<option value="lelang-ulang">Lelang Ulang</option>
 						<option value="lelang-gagal">Lelang Gagal</option>
 						<option value="verifikasi-dokumen">Verifikasi Dokumen</option>
+				  </select>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group" id="status2">
+					<label for="">Status</label>
+					<select name="status" class="form-control">
+						<option value="belum-proses">Belum Proses</option>
+						<option value="proses-sedang-berjalan">proses sedang berjalan</option>
+						<option value="proses-selesai">proses selesai</option>
 				  </select>
 				</div>
 			</div>
@@ -139,6 +149,21 @@
 			$(".validation-text").fadeIn("fast");
 		} else {
 			$(".validation-text").fadeOut("fast");
+		}
+	});
+
+	/* onjenis proses lelang  */
+	$("#jenis_proses_lelang").change(function() {
+		$("#status2").hide();
+		var jenis_proses_lelang = $(this).val();
+		if(jenis_proses_lelang == "e-tendering") {
+			$("#hps").show();
+			$("#status1").show();
+			$("#status2").hide();
+		} else {
+			$("#hps").hide();
+			$("#status2").show();
+			$("#status1").hide();
 		}
 	});
 </script>

@@ -123,20 +123,33 @@
 					<div class="col-md-6">
 						<!-- Input Belanja Langung Non Pegawai (BLNP) -->
 						<div class="form-group" id="blnp" style="display:none;">
-							<label for="">Belanja Langsung Non Pegawai (BLNP)</label>
+							<label for="">Belanja Barang/Jasa</label>
 							<input type="text" name="blnp"  class="form-control setMoney" placeholder="Rp " required data-error="Isi dengan 0 (Nol) jika tidak ada anggaran (letakkan kursor pada form inputan)">
 							<div class="help-block with-errors"></div>
 						</div> <!-- END Input Belanja Langung Non Pegawai (BLNP) -->
 					</div> <!-- End Col-6 -->
 				</div> <!-- End Row Nested-->
+				<div class="row">
 				<!-- Input Belanja Tidak LangungPegawai (BTLP) -->
+				<div class="col-md-6">
 				<div class="form-group" id="btlp" style="display:none;">
 					<label for="">Belanja Tidak Langsung Pegawai (BTLP)</label>
 					<input type="text" name="btlp" class="form-control setMoney" placeholder="Rp " required data-error="Isi dengan 0 (Nol) jika tidak ada anggaran (letakkan kursor pada form inputan)">
 					<div class="help-block with-errors"></div>
 				</div> <!-- END Input Belanja Tidak LangungPegawai (BTLP) -->
+			</div>
+				<div class="col-md-6">
+						<!-- Input Belanja Langung Non Pegawai (BLNP) -->
+						<div class="form-group" id="blnp2" style="display:none;">
+							<label for="">Belanja Tidak Langsung Non Pegawai</label>
+							<input type="text" name="blnp2"  class="form-control setMoney" placeholder="Rp " required data-error="Isi dengan 0 (Nol) jika tidak ada anggaran (letakkan kursor pada form inputan)">
+							<div class="help-block with-errors"></div>
+						</div> <!-- END Input Belanja Langung Non Pegawai (BLNP) -->
+					</div>
+				</div>
 				<!-- Menghitung Pagu BL -->
 				<button class="btn btn-warning btn-sm" id="hitungBl" style="margin-bottom:15px; display:none">Hitung</button>
+				<button class="btn btn-warning btn-sm" id="hitungBl2" style="margin-bottom:15px; display:none">Hitung</button>
 				<!-- Input Pagu (Disable) -->
 				<div class="form-group">
 					<label for="">Pagu</label>
@@ -162,6 +175,26 @@
 		$("input[name='tahun_id']").val(tahun_id);
 	});
 
+$("#jenis_belanja").change(function() {
+		$("#blp, #blnp,#blnp2, #btlp, #hitungBl,#hitungBl2").hide();
+		$("input[name='blp'], input[name='blnp'],input[name='blnp2'], input[name='btlp'], #pagu").val("");
+		var jb = $(this).val();
+		if(jb == 'bl') {
+			$("#blp, #blnp, #hitungBl").show();
+		} else if(jb = 'btl') {
+			$("#btlp, #blnp2, #hitungBl2").show();
+			$("select[name='program_id']").html("<option value=''>-- Kosong --</option>");
+			$("select[name='program_id']").selectpicker('refresh');
+		}
+	});
+$("#hitungBl2").click(function() {
+		var blp = Number($("input[name='btlp']").val().replace(/[Rp.]+/g,""));
+		var blnp = Number($("input[name='blnp2']").val().replace(/[Rp.]+/g,""));
+		var total = blp+blnp;
+		$("#pagu").maskMoney('mask',total);
+		$("input[name='pagu']").val(total);
+		return false;
+	});
 
 </script>
 @stop

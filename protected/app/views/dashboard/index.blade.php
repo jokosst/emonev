@@ -13,6 +13,7 @@
 			</div>
 		</div>
 	</div>
+	
 	@if(Auth::user()->level == 'adminskpd')
 	<div class="row">
 		<div class="col-md-6">

@@ -8,7 +8,7 @@ class AuthController extends BaseController {
 
 	public function doLogin(){
 		$rules = array (
-			'username' => 'required|min:5|max:30',
+			'username' => 'required|min:2|max:30',
 			'password' => 'required|alphaNum|min:5'
 		);
 

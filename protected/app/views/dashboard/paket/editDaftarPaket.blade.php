@@ -66,7 +66,7 @@
 			<!-- Input Pagu -->
 			<div class="form-group">
 				<label for="">Pagu Paket</label>
-				<input type="text" name="pagu_paket" class="form-control setMoney" required value="{{ "Rp ".number_format($paket->nilai_pagu_paket,0,',','.'); }}">
+				<input type="text" id="pagu" name="pagu_paket" class="form-control setMoney" required value="{{ "Rp ".number_format($paket->nilai_pagu_paket,0,',','.'); }}">
 				<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
 			</div>
 			<!-- End Input Pagu -->
@@ -99,10 +99,10 @@
 		<!-- Col-md-4 -->
 		<div class="col-md-4">
 			<!-- Input Satuan Volume -->
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label for="">Satuan Volume</label>
 				<input type="text" name="satuan_volume" class="form-control" required value="{{$paket->satuan_volume}}">
-			</div>
+			</div> -->
 			<!-- Input Satuan Volume -->
 		</div>
 		<!-- End col-md-4 -->
@@ -113,7 +113,7 @@
 		<!-- Col-md-6 -->
 		<div class="col-md-6">
 			<!-- Input Hasil Kegiatan -->
-			<div class="form-group">
+			<div class="form-group" id="kualifikasi3">
 				<label for="">Hasil Kegiatan</label>
 				<select name="hasil_kegiatan" class="form-control">
 					<option value="konstruksi" @if($paket->hasil_kegiatan == 'konstruksi') selected @endif>Konstruksi</option>
@@ -121,6 +121,26 @@
 				</select>
 			</div>
 			<!-- End Input Hasil Kegiatan -->
+		</div>
+		<div class="col-md-6">
+			<!-- Input Kualifikasi Lelang -->
+			<div class="form-group" id="kualifikasi1">
+				<label for="">Kualifikasi Lelang</label>
+				<select name="kualifikasi_lelang" class="form-control">
+					<option value="kecil">Kecil</option>
+				</select>
+			</div>
+			<!-- End Input Kualifikasi Lelang -->
+		</div>
+		<div class="col-md-6">
+			<!-- Input Kualifikasi Lelang -->
+			<div class="form-group" id="kualifikasi2">
+				<label for="">Kualifikasi Lelang</label>
+				<select name="kualifikasi_lelang" class="form-control">
+					<option value="non-kecil">Non Kecil</option>
+				</select>
+			</div>
+			<!-- End Input Kualifikasi Lelang -->
 		</div>
 		<!-- End col-md-6 -->
 		<!-- Col-md-6 -->
@@ -255,6 +275,25 @@
 		}
 	});
 
+</script>
+<script type="text/javascript">
+	$("#kualifikasi2").hide();
+	$("#kualifikasi1").hide();
+
+/* onjenis pagu  */
+	$("#pagu").change(function() {
+		
+		var pagu = Number($(this).val().replace(/[Rp.]+/g,""));
+		if(pagu <= "2500000000") {
+			$("#kualifikasi1").show();
+			$("#kualifikasi2").hide();
+			$("#kualifikasi3").hide();
+		} else {
+			$("#kualifikasi1").hide();
+			$("#kualifikasi2").show();
+			$("#kualifikasi3").hide();
+		}
+	});
 </script>
 
 @stop

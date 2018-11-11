@@ -29,9 +29,10 @@
 			<div class="col-md-6">
 				<!-- Input Jenis Proses Lelang -->
 				<label for="">Jenis Proses Pengadaan</label>
-				<select name="jenis_proses_lelang" class="form-control">
+				<select name="jenis_proses_lelang" id="jenis_proses_lelang" class="form-control">
 					<option @if($lelang->jenis_proses_lelang == 'e-tendering') selected @endif value="e-tendering">Tender</option>
 					<option @if($lelang->jenis_proses_lelang == 'e-purchasing') selected @endif value="e-purchasing">E-Purchasing</option>
+					<option  @if($lelang->jenis_proses_lelang == 'non-tender') selected @endif value="non-tender">Non-Tender</option>
 				</select>
 				<!-- End Input Jenis Proses Lelang -->
 			</div>
@@ -61,7 +62,7 @@
 			<!-- Col-md-6 -->
 			<div class="col-md-6">
 				<!-- Input HPS -->
-				<div class="form-group">
+				<div class="form-group" id="hps">
 					<label for="">HPS</label>
 					<input type="text" name="hps" class="form-control setMoney" required value="{{ "Rp ".number_format($lelang->nilai_hps,0,',','.'); }}">
 					<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
@@ -104,10 +105,10 @@
 			<!-- Col-md-4 -->
 			<div class="col-md-4">
 				<!-- Input Status -->
-				<div class="form-group">
+				<div class="form-group" id="status1">
 					<label for="">Status</label>
 					<select name="status" class="form-control">
-						<option @if($lelang->status == 'belum-mengajukan-dokumen-tender') selected @endif value="belum-siap-lelang">Belum Mengajukan Dokumen Tender</option>
+						<option @if($lelang->status == 'belum-mengajukan-dokumen-tender') selected @endif value="belum-mengajukan-dokumen-tender">Belum Mengajukan Dokumen Tender</option>
 						<option @if($lelang->status == 'lelang-sedang-berjalan') selected @endif value="lelang-sedang-berjalan">Lelang Sedang Berjalan</option>
 						<option @if($lelang->status == 'lelang-sudah-selesai') selected @endif value="lelang-sudah-selesai">Lelang Sudah Selesai</option>
 						<option @if($lelang->status == 'lelang-ulang') selected @endif value="lelang-ulang">Lelang Ulang</option>
@@ -117,6 +118,16 @@
 				<!-- End Input Status -->
 			</div>
 			<!-- End Col-md-4 -->
+			<div class="col-md-4">
+				<div class="form-group" id="status2">
+					<label for="">Status</label>
+					<select name="status" class="form-control">
+						<option @if($lelang->status == 'belum-proses') selected @endif value="belum-proses">Belum Proses</option>
+						<option @if($lelang->status == 'proses-sedang-berjalan') selected @endif value="proses-sedang-berjalan">proses sedang berjalan</option>
+						<option  @if($lelang->status == 'proses-selesai') selected @endif value="proses-selesai">proses selesai</option>
+				  </select>
+				</div>
+			</div>
 		</div>
 		<!-- End Row -->
 		<input type="hidden" name="id" value="{{$lelang->id}}">
@@ -151,6 +162,20 @@
 			$(".validation-text").fadeIn("fast");
 		} else {
 			$(".validation-text").fadeOut("fast");
+		}
+	});
+	/* onjenis proses lelang  */
+	$("#jenis_proses_lelang").change(function() {
+		$("#status2").hide();
+		var jenis_proses_lelang = $(this).val();
+		if(jenis_proses_lelang == "e-tendering") {
+			$("#hps").show();
+			$("#status1").show();
+			$("#status2").hide();
+		} else {
+			$("#hps").hide();
+			$("#status2").show();
+			$("#status1").hide();
 		}
 	});
 </script>
