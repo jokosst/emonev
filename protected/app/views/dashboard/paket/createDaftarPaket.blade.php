@@ -5,8 +5,11 @@
 <h2 class="menu__header">Daftar Paket Perangkat Daerah</h2>
 <!-- FORM ADD DAFTAR PAKET -->
 <form action="" method="POST" role="form" data-toggle="validator">
+
 	<legend>Tambah Daftar Paket</legend>
 	<!-- Input SKPD -->
+	<div class="row">
+		<div class="col-md-12">
 	<div class="form-group">
 		<label for="">Perangkat Daerah</label>
 		<!-- Jika Masuk bukan sebagai Admin SKPD (root || supeadmin) -->
@@ -25,9 +28,10 @@
 			<input type="hidden" name="skpd_id" value="{{$Skpd->id}}">
 		@endif
 	</div>
+</div>
 	<!-- End Input SKPD -->
 	<!-- ROW -->
-	<div class="row">
+	
 		<!-- Col-md-6 -->
 		<div class="col-md-6">
 			<!-- Input Tahun -->
@@ -59,9 +63,10 @@
 			<!-- End Input KPA -->
 		</div>
 		<!-- End Col-md-6 -->
-	</div>
+	
 	<!-- END ROW -->
 	<!-- Input Kegiatan -->
+	<div class="col-md-12">
 	<div class="form-group">
 		<label for="">Kegiatan</label> <i class="fa fa-circle-o-notch fa-spin icon-loading" style="display:none"></i>
 		<select name="kegiatan_id" class="form-control selectpicker" data-live-search="true" id="changeKegiatan">
@@ -72,28 +77,31 @@
 		</select>
 		<input type="hidden" id="limit_anggaran">
 	</div>
+</div>
 	<!-- End Input Kegiatan -->
 	<!-- Input Paket -->
+	<div class="col-md-12">
 	<div class="form-group">
 		<label for="">Paket</label>
 		<input type="text" name="paket" class="form-control" required placeholder="Nama Paket">
 	</div>
+</div>
 	<!-- End Input Paket -->
 	<!-- ROW -->
-	<div class="row">
+	
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<!-- Input Pagu -->
 			<div class="form-group">
 				<label for="">Pagu Paket</label>
 				<input type="text" class="form-control setMoney" name="pagu_paket" id="pagu" placeholder="Rp" required>
-				<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
+				<!-- <p class="validation-text">Nilai Inputan Melebihi Pagu</p> -->
 			</div>
 			<!-- END Input Pagu  -->
 		</div>
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<!-- Input Kode Anggaran  -->
 			<div class="form-group">
 				<label for="">Kode Anggaran Paket</label>
@@ -102,10 +110,10 @@
 			<!-- END Input Kode Anggaran  -->
 		</div>
 		<!-- End Col-md-6 -->
-	</div>
+	
 	<!-- End ROW -->
 	<!-- ROW -->
-	<div class="row">
+	
 		<!-- Col-md-4 -->
 		<div class="col-md-4">
 			<!-- Input Volume -->
@@ -117,19 +125,19 @@
 		</div>
 		<!-- End Col-md-4 -->
 		<!-- Col-md-4 -->
-		<div class="col-md-4">
+		<!-- <div class="col-md-4"> -->
 			<!-- Input Satuan Volume -->
 			<!-- <div class="form-group" id="satuanvolume">
 				<label for="">Satuan Volume</label>
 				<input type="text" name="satuan_volume" class="form-control"  placeholder="Satuan Volume" required>
 			</div> -->
 			<!-- END Input Satuan Volume  -->
-		</div>
+		<!-- </div> -->
 		<!-- End Col-md-4 -->
-	</div>
+	
 	<!-- End ROW -->
 	<!-- ROW -->
-	<div class="row">
+	
 		<!-- Col-md-6 -->
 		<div class="col-md-6">
 			<!-- Input Hasil Kegiatan -->
@@ -145,6 +153,8 @@
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
 		<div class="col-md-6">
+			<div class="row">
+				<div class="col-md-12">
 			<!-- Input Kualifikasi Lelang -->
 			<div class="form-group" id="kualifikasi1">
 				<label for="">Kualifikasi Lelang</label>
@@ -154,7 +164,7 @@
 			</div>
 			<!-- End Input Kualifikasi Lelang -->
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<!-- Input Kualifikasi Lelang -->
 			<div class="form-group" id="kualifikasi2">
 				<label for="">Kualifikasi Lelang</label>
@@ -164,12 +174,14 @@
 			</div>
 			<!-- End Input Kualifikasi Lelang -->
 		</div>
+	</div>
+	</div>
 
 		<!-- End Col-md-6 -->
-	</div>
+	
 	<!-- End ROW -->
 	<!-- ROW -->
-	<div class="row">
+	
 		<!-- Col-md-6 -->
 		<div class="col-md-4">
 			<!-- Input Jenis Belanja Paket -->
@@ -218,10 +230,10 @@
 			</div>
 			<!-- End Input Jenis Belanja Paket -->
 		</div>
-	</div>
+	
 	<!-- End ROW -->
 	<!-- ROW -->
-	<div class="row">
+	
 		<!-- Col-md-6 -->
 		<div class="col-md-6">
 			<!-- Input Jenis Pengadaan -->
@@ -251,9 +263,12 @@
 			<!-- End Input lokasi -->
 		</div>
 		<!-- End Col-md-6 -->
-	</div>
+	
 	<!-- End ROW -->
-	<button type="submit" class="btn btn-primary btn-lg" style="margin-top:25px;">Submit</button>
+	<div class="col-md-12">
+	<button type="submit" class="btn btn-primary btn-lg" style="margin-top:25px;margin-bottom: 25px">Submit</button>
+</div>
+</div>
 </form>
 <!-- END FORM ADD DAFTAR PAKET -->
 

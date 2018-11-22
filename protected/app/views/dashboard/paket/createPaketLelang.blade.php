@@ -6,6 +6,8 @@
 	<form action="" method="POST" role="form" data-toggle="validator">
 		<legend>Tambah Paket Lelang Perangkat Daerah</legend>
 		<!-- Input SKPD -->
+		<div class="row">
+		<div class="col-md-12">
 		<div class="form-group">
 			<label for="">Perangkat Daerah</label>
 			<!-- Jika Masuk bukan sebagai Admin SKPD (root || administrator) -->
@@ -24,7 +26,7 @@
 				<input type="hidden" name="skpd_id" value="{{$Skpd->id}}">
 			@endif
 		</div> <!-- End Input SKPD -->
-		<div class="row">
+	</div>
 			<div class="col-md-6">
 				<!-- Input Tahun -->
 				<div class="form-group">
@@ -49,7 +51,7 @@
 					{{-- <input type="text" name="jenis_proses_lelang" class="form-control" value="E-Procurement" disabled> --}}
 				</div>
 			</div>
-		</div> <!-- End Row -->
+			<div class="col-md-12">
 		<div class="form-group">
 			<label for="">Kegiatan</label> <i class="fa fa-circle-o-notch fa-spin icon-loading" style="display:none"></i>
 			<select name="kegiatan_id" class="form-control selectpicker" data-live-search="true" id="selectKegiatanGetPaket">
@@ -59,6 +61,8 @@
 				@endforeach
 			</select>
 		</div>
+	</div>
+	<div class="col-md-12">
 		<div class="form-group">
 			<label for="">Paket</label>
 			<select name="paket_id" class="form-control selectpicker" data-live-search="true" id="changePaket">
@@ -66,7 +70,7 @@
 			</select>
 			<input type="hidden" id="limit_anggaran">
 		</div>
-		<div class="row">
+	</div>
 			<div class="col-md-6">
 				<div class="form-group" id="hps">
 					<label for="">HPS</label>
@@ -80,10 +84,10 @@
 					<input type="text" name="kode_bidang" class="form-control" placeholder="Kode Bidang" required>
 				</div>
 			</div> -->
-		</div>
+		
 
-		<div class="row">
-			<div class="col-md-4">
+		
+			<div class="col-md-6">
 				<div class="form-group">
 					<label for="">Nomor Kontak</label>
 					<input type="text" name="nomor_kontak" class="form-control" placeholder="Nomor Kontak" required>
@@ -118,8 +122,9 @@
 				  </select>
 				</div>
 			</div>
-		</div>
+		
 		<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+	</div>
 	</form>
 
 @endsection

@@ -7,8 +7,9 @@
 	<form action="" method="POST" role="form" data-toggle="validator">
 		<legend>Tambah Kegiatan</legend>
 		<!-- Input SKPD -->
-		<div class="form-group">
+		<div class="row">
 			<div class="col-md-12">
+		<div class="form-group">			
 			<label for="">Perangkat Daerah</label>
 			<!-- Jika Masuk bukan sebagai Admin SKPD (root || supeadmin) -->
 			@if(Auth::user()->level != 'adminskpd')
@@ -26,7 +27,7 @@
 			@endif
 		</div>
 		</div> <!-- End Input SKPD -->
-		<div class="row">
+		
 			<div class="col-md-4">
 				<div class="form-group">
 					<label for="">Tahun</label>
@@ -53,14 +54,17 @@
 				</div>
 				<!-- End Input Program -->
 			</div>
-		</div>
+		
 		<!-- Input Kegiatan -->
+		<div class="col-md-12">
 		<div class="form-group">
 			<label>Kegiatan</label>
 			<input type="text" name="kegiatan" class="form-control" required placeholder="Nama Kegiatan" data-error="Tidak boleh kosong">
 			<div class="help-block with-errors"></div>
 		</div> <!-- End Input Kegiatan -->
+	</div>
 		<!-- Input KPA -->
+		<div class="col-md-12">
 		<div class="form-group">
 			<label for="">PA/KPA/PPK</label>
 			<select name="pegawai_id" class="selectpicker form-control" data-live-search="true">
@@ -71,10 +75,11 @@
 					@endforeach
 				@endif
 		  </select>
+		</div>
 		</div> <!-- End Input KPA -->
 		<!-- One Row for Tahun, Kode Anggaran, Sumber Dana -->
-		<div class="row">
-			<div class="col-md-5">
+		
+			<div class="col-md-6">
 				<!-- Input Kode Anggaran -->
 				<div class="form-group">
 					<label for="">Kode Anggaran</label>
@@ -82,7 +87,7 @@
 					<div class="help-block with-errors"></div>
 				</div> <!-- End Input Kode Anggaran -->
 			</div> <!-- End Col-5 -->
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<!-- Input Sumber Dana -->
 				<div class="form-group">
 					<label for="">Sumber Dana</label>
@@ -94,10 +99,10 @@
 				  </select>
 				</div> <!-- End Input KPA -->
 			</div> <!-- End Col-4 -->
-		</div> <!-- End Row -->
+		
 		<!-- One Row for Jenis Belanja, Pagu -->
-		<div class="row">
-			<div class="col-md-4">
+		
+			<div class="col-md-3">
 				<!-- Input Jenis Belanja -->
 				<div class="form-group">
 					<label for="">Jenis Belanja</label>
@@ -110,7 +115,7 @@
 				</div> <!-- End Jenis Belanja -->
 				<button type="submit" class="btn btn-primary btn-lg" style="margin-top:25px;">Submit</button>
 			</div> <!-- End Col-4 -->
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div class="row">
 					<div class="col-md-6">
 						<!-- Input Belanja Langung Pegawai (BLP) -->
@@ -128,9 +133,7 @@
 							<div class="help-block with-errors"></div>
 						</div> <!-- END Input Belanja Langung Non Pegawai (BLNP) -->
 					</div> <!-- End Col-6 -->
-				</div> <!-- End Row Nested-->
-				<div class="row">
-				<!-- Input Belanja Tidak LangungPegawai (BTLP) -->
+					<!-- Input Belanja Tidak LangungPegawai (BTLP) -->
 				<div class="col-md-6">
 				<div class="form-group" id="btlp" style="display:none;">
 					<label for="">Belanja Tidak Langsung Pegawai (BTLP)</label>
@@ -146,16 +149,22 @@
 							<div class="help-block with-errors"></div>
 						</div> <!-- END Input Belanja Langung Non Pegawai (BLNP) -->
 					</div>
-				</div>
-				<!-- Menghitung Pagu BL -->
-				<button class="btn btn-warning btn-sm" id="hitungBl" style="margin-bottom:15px; display:none">Hitung</button>
+					<div class="col-md-12">
+					<button class="btn btn-warning btn-sm" id="hitungBl" style="margin-bottom:15px; display:none">Hitung</button>
 				<button class="btn btn-warning btn-sm" id="hitungBl2" style="margin-bottom:15px; display:none">Hitung</button>
+			</div>
 				<!-- Input Pagu (Disable) -->
+				<div class="col-md-12">
 				<div class="form-group">
 					<label for="">Pagu</label>
 					<input type="text" id="pagu" class="form-control setMoneyPagu"  placeholder="Total Pagu dari Jenis Belanja" disabled>
 					<input type="hidden" name="pagu">
 				</div> <!-- END Input Pagu (Disable) -->
+			</div>
+				</div> <!-- End Row Nested-->
+				
+				<!-- Menghitung Pagu BL -->
+				
 			</div> <!-- End Col-8 -->
 		</div><!-- End Row -->
 	</form>
