@@ -48,8 +48,11 @@
         <th>Lokasi Kegiatan</th>
         <th>Nama KPA/PA/PPK</th>
         <th>Rekanan</th>
+        <th>Nomor BAST </th>
+        <th>Tanggal BAST </th>
         <th>Mulai</th>
         <th>Akhir </th>
+        
       </tr>
   </thead>
   <tbody>
@@ -61,6 +64,8 @@
       <td>{{ Convert::ubah_kab($value->lokasi) }}</td>
       <td>{{ $value->pegawai }}</td>
       <td>{{ $value->rekanan }}</td>
+      <td>{{ $value->nomor_bast }}</td>
+      <td>{{ $value->tgl_bast }}</td>
       <td>{{ Convert::tgl_eng_to_ind($value->tanggal_mulai) }}</td>
       <td>{{ Convert::tgl_eng_to_ind($value->tanggal_selesai) }}</td>
     </tr>

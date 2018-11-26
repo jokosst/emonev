@@ -157,7 +157,7 @@
 				<div class="col-md-12">
 			<!-- Input Kualifikasi Lelang -->
 			<div class="form-group" id="kualifikasi1">
-				<label for="">Kualifikasi Lelang</label>
+				<label for="">Kualifikasi</label>
 				<select name="kualifikasi_lelang" class="form-control">
 					<option value="kecil">Kecil</option>
 				</select>
@@ -201,9 +201,9 @@
 			<div class="form-group">
 				<label for="">Metode</label>
 				<select name="metode" class="form-control">
-					<option value="lelang-sederhana">Lelang Sederhana</option>
-					<option value="lelang-terbatas">Lelang Terbatas</option>
-					<option value="lelang-umum">Lelang Umum</option>
+					<option value="lelang-sederhana">Tender Sederhana</option>
+					<option value="lelang-terbatas">Tender Terbatas</option>
+					<option value="lelang-umum">Tender Umum</option>
 					<option value="pemilihan-langsung">Pemilihan Langsung</option>
 					<option value="pengadaan-langsung">Pengadaan Langsung</option>
 					<option value="penunjukan-langsung">Penunjukan Langsung</option>
@@ -213,6 +213,9 @@
 					<option value="swakelola-program">Swakelola Program</option>
 					<option value="swakelola-rutin">Swakelola Rutin</option>
 					<option value="e-purchasing">E-Purchasing</option>
+					<option value="seleksi">Seleksi</option>
+					<option value="tender">Tender</option>
+					<option value="tender-cepat">Tender Cepat</option>
 				</select>
 			</div>
 			<!-- End Input Metode -->

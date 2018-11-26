@@ -7,10 +7,14 @@
 	<a href="{{URL::to('emonevpanel/realisasi/create')}}" class="btn btn-primary" style="float:right;">Tambah Realisasi</a>
 	-->
 	<!-- Sortir Realisasi -->
+	<div class="row">
 	<form action="" method="GET" role="form" data-toggle="validator" style="margin-bottom:30px;">
+		<div class="col-md-12">
 		<legend>Sortir Realisasi</legend>
 		<!-- Jika selain adminskpd (root || superadmin) -->
+		</div>
 		@if(Auth::user()->level != 'adminskpd')
+		<div class="col-md-12">
 			<div class="form-group">
 				<label for="">Perangkat Daerah</label>
 				<select name="skpd_id" class="form-control" required >
@@ -21,16 +25,19 @@
 					@endforeach
 				</select>
 			</div>
+</div>
 		<!-- Jika adminskpd -->
 		@else
+		<div class="col-md-12">
 			<!-- Menampilkan 1 SKPD -->
 			<div class="form-group">
 				<input type="text" class="form-control" value="{{$Skpd->skpd}}" disabled>
 				<input type="hidden" name="skpd_id" value="{{$Skpd->id}}">
 			</div>
+		</div>
 		@endif
 		<!-- Row -->
-		<div class="row">
+		
 			<!-- Col-md-6 -->
 			<div class="col-md-6">
 				<!-- Input Tahun -->
@@ -71,10 +78,13 @@
 				<!-- End Input Bulan -->
 			</div>
 			<!-- End Col-md-6 -->
-		</div>
+		
 		<!-- End Row -->
+		<div class="col-md-12">
 		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
 	</form>
+</div>
 	<!-- End Sortir Realisasi -->
 	<!-- Table Realisasi -->
 	<table id="table_id" class="table table-striped">

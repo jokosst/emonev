@@ -1,10 +1,10 @@
 @extends('layout.dashboardLayout')
 
 @section('content')
-	<h2 class="menu__header">Paket Lelang SKPD</h2>
+	<h2 class="menu__header">Paket Tender SKPD</h2>
 	<!-- FORM EDIT PAKET LELANG -->
 	<form action="{{URL::to('emonevpanel/paket-lelang/update')}}" method="POST" role="form" data-toggle="validator">
-		<legend>Edit Paket Lelang Perangkat Daerah</legend>
+		<legend>Edit Paket Tender Perangkat Daerah</legend>
 		<!-- Input SKPD -->
 		<div class="form-group">
 			<label for="">Perangkat Daerah</label>
@@ -101,6 +101,24 @@
 				</div>
 				<!-- End Tempat Daftar -->
 			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="">Nomor BAST</label>
+					<input type="text" name="nomor_bast" class="form-control" value="{{$lelang->nomor_bast}}" placeholder="Nomor BAST" required>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="">Realisasi Fisik Paket</label>
+					<input type="text" name="realisasi-fisik-paket" class="form-control" value="{{$lelang->realisasi-fisik-paket}}" placeholder="Realisasi Fisik Paket" required>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="">Realisasi Keuangan Paket</label>
+					<input type="text" name="realisasi-keuangan-paket" value="{{$lelang->realisasi-keuangan-paket}}" class="form-control" placeholder="Realisasi Keuangan Paket" required>
+				</div>
+			</div>
 			<!-- End Col-md-4 -->
 			<!-- Col-md-4 -->
 			<div class="col-md-4">
@@ -109,9 +127,9 @@
 					<label for="">Status</label>
 					<select name="status" class="form-control">
 						<option @if($lelang->status == 'belum-mengajukan-dokumen-tender') selected @endif value="belum-mengajukan-dokumen-tender">Belum Mengajukan Dokumen Tender</option>
-						<option @if($lelang->status == 'lelang-sedang-berjalan') selected @endif value="lelang-sedang-berjalan">Lelang Sedang Berjalan</option>
-						<option @if($lelang->status == 'lelang-sudah-selesai') selected @endif value="lelang-sudah-selesai">Lelang Sudah Selesai</option>
-						<option @if($lelang->status == 'lelang-ulang') selected @endif value="lelang-ulang">Lelang Ulang</option>
+						<option @if($lelang->status == 'lelang-sedang-berjalan') selected @endif value="lelang-sedang-berjalan">Tender Sedang Berjalan</option>
+						<option @if($lelang->status == 'lelang-sudah-selesai') selected @endif value="lelang-sudah-selesai">Tender Sudah Selesai</option>
+						<option @if($lelang->status == 'lelang-ulang') selected @endif value="lelang-ulang">Tender Ulang</option>
 						<option @if($lelang->status == 'verifikasi-dokumen') selected @endif value="verifikasi-dokumen">Verifikasi Dokumen</option>
 				  </select>
 				</div>
@@ -128,6 +146,68 @@
 				  </select>
 				</div>
 			</div>
+		</div>
+		<div class="col-md-12">
+				<!-- Input Rekanan -->
+				<div class="form-group">
+					<label for="">Rekanan</label>
+					<input type="text" name="rekanan" class="form-control" value="{{$progres->rekanan}}">
+				</div>
+				<!-- End Input Rekanan -->
+			</div>
+			<!-- End Col-md-6 -->
+		</div>
+		<!-- End Row -->
+		<!-- Row -->
+		<div class="row">
+			<!-- Col-md-6 -->
+			<div class="col-md-6">
+				<!-- Input Nilai Kontrak -->
+				<div class="form-group">
+					<label for="">Nilai Kontrak</label>
+					<input type="text" class="form-control setMoney" name="nilai_kontrak" value="{{ "Rp ".number_format($progres->nilai_kontrak,0,',','.'); }}"  required>
+					<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
+				</div>
+				<!-- End Input Nilai Kontrak -->
+			</div>
+			<!-- End Col-md-6 -->
+			<!-- Col-md-6 -->
+			<div class="col-md-6">
+				<!-- Input Status Kontrak -->
+				<div class="form-group">
+					<label for="">Status Kontrak</label>
+					<select name="status_kontrak" class="form-control">
+						<option @if($progres->status_kontrak == 'blt') selected @endif value="blt">Belum Tanda Tangan Kontrak</option>
+						<option @if($progres->status_kontrak == 'sdt') selected @endif value="sdt">Sudah Tanda Tangan Kontrak</option>
+					</select>
+				</div>
+				<!-- End Input Status Kontrak -->
+			</div>
+			<!-- End Col-md-6 -->
+		</div>
+		<!-- End Row -->
+		<!-- Row -->
+		<div class="row">
+			<!-- Col-md-6 -->
+			<div class="col-md-6">
+				<!-- Input Tanggal Mulai -->
+				<div class="form-group">
+					<label for="">Tanggal Mulai</label>
+					<input type="text" class="datepicker form-control" name="tanggal_mulai" value="{{$progres->tanggal_mulai}}" required>
+				</div>
+				<!-- End Input Tanggal Mulai -->
+			</div>
+			<!-- End Col-md-6 -->
+			<!-- Col-md-6 -->
+			<div class="col-md-6">
+				<!-- Input Tanggal Selesai -->
+				<div class="form-group">
+					<label for="">Tanggal Selesai</label>
+					<input type="text" class="datepicker form-control" name="tanggal_selesai" value="{{$progres->tanggal_selesai}}">
+				</div>
+				<!-- End Input Tanggal Selesai -->
+			</div>
+			<!-- End Col-md-6 -->
 		</div>
 		<!-- End Row -->
 		<input type="hidden" name="id" value="{{$lelang->id}}">

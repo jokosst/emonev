@@ -1,12 +1,12 @@
 @extends('layout.dashboardLayout')
 
 @section('content')
-	<h2 class="menu__header">Progress Lelang Perangkat Daerah</h2>
-	<a href="{{URL::to('/emonevpanel/progres-lelang/create')}}" class="btn btn-primary" style="float:right;">Tambah Progres Lelang</a>
+	<h2 class="menu__header">Progress Tender Perangkat Daerah</h2>
+	<a href="{{URL::to('/emonevpanel/progres-lelang/create')}}" class="btn btn-primary" style="float:right;margin-top:10px;">Tambah Progres Tender</a>
 	<!-- Sortir Tahun -->
 	<div class="form-group form-inline">
 		<label for="">Tahun</label>
-		<select id="selectGetPaketTable" class="form-control" style="margin-bottom:30px;">
+		<select id="selectGetPaketTable" class="form-control" style="margin-bottom:10px;">
 			<option value="">------ Pilih Tahun ----------</option>
 			<!-- Menampilkan Semua SKPD -->
 			@foreach($Tahun as $tahun)

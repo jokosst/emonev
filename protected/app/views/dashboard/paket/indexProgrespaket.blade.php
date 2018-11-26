@@ -3,11 +3,11 @@
 @section('content')
 
 <h2 class="menu__header">Progres Paket Perangkat Daerah</h2>
-<a href="{{URL::to('emonevpanel/paket-lelang/create')}}" class="btn btn-primary" style="float:right;">Tambah Progres Paket</a>
+<a href="{{URL::to('emonevpanel/paket-lelang/create')}}" class="btn btn-primary" style="float:right;margin-top:10px;">Tambah Progres Paket</a>
 <!-- Sortir Tahun -->
 <div class="form-group form-inline">
 	<label for="">Tahun</label>
-	<select id="selectGetPaketTable" class="form-control" style="margin-bottom:30px;">
+	<select id="selectGetPaketTable" class="form-control" style="margin-bottom:10px;">
 		<option value="">------ Pilih Tahun ----------</option>
 		<!-- Menampilkan Semua SKPD -->
 		@foreach($Tahun as $tahun)

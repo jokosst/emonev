@@ -1,10 +1,10 @@
 @extends('layout.dashboardLayout')
 
 @section('content')
-	<h2 class="menu__header">Paket Lelang Perangkat Daerah</h2>
+	<h2 class="menu__header">Paket Tender Perangkat Daerah</h2>
 	<!-- FORM ADD PAKET LELANG -->
 	<form action="" method="POST" role="form" data-toggle="validator">
-		<legend>Tambah Paket Lelang Perangkat Daerah</legend>
+		<legend>Tambah Paket Tender Perangkat Daerah</legend>
 		<!-- Input SKPD -->
 		<div class="row">
 		<div class="col-md-12">
@@ -43,7 +43,7 @@
 				<div class="form-group">
 					<label for="">Jenis Proses Pengadaan</label>
 					<select name="jenis_proses_lelang" id="jenis_proses_lelang" class="form-control">
-						<option value="">--- Pilih Jenis Proses Pengadaan ----</option>
+						<option value="0">--- Pilih Jenis Proses Pengadaan ----</option>
 						<option value="e-tendering">Tender</option>
 						<option value="e-purchasing">E-Purchasing</option>
 						<option value="non-tender">Non-Tender</option>
@@ -71,7 +71,7 @@
 			<input type="hidden" id="limit_anggaran">
 		</div>
 	</div>
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="form-group" id="hps">
 					<label for="">HPS</label>
 					<input type="text" name="hps" class="form-control setMoney" placeholder="Rp" required>
@@ -87,7 +87,7 @@
 		
 
 		
-			<div class="col-md-6">
+			<div class="col-md-4">
 				<div class="form-group">
 					<label for="">Nomor Kontak</label>
 					<input type="text" name="nomor_kontak" class="form-control" placeholder="Nomor Kontak" required>
@@ -100,14 +100,33 @@
 				</div>
 			</div>
 			<div class="col-md-4">
+				<div class="form-group">
+					<label for="">Nomor BAST</label>
+					<input type="text" name="nomor_bast" class="form-control" placeholder="Nomor BAST" required>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="">Realisasi Fisik Paket</label>
+					<input type="text" name="realisasi-fisik-paket" class="form-control" placeholder="Realisasi Fisik Paket" required>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label for="">Realisasi Keuangan Paket</label>
+					<input type="text" name="realisasi-keuangan-paket" class="form-control" placeholder="Realisasi Keuangan Paket" required>
+				</div>
+			</div>
+			
+			<div class="col-md-4">
 				<div class="form-group" id="status1">
 					<label for="">Status</label>
 					<select name="status" class="form-control">
 						<option value="belum-mengajukan-dokumen-tender">Belum Mengajukan Dokumen Tender</option>
-						<option value="lelang-sedang-berjalan">Lelang Sedang Berjalan</option>
-						<option value="lelang-sudah-selesai">Lelang Sudah Selesai</option>
-						<option value="lelang-ulang">Lelang Ulang</option>
-						<option value="lelang-gagal">Lelang Gagal</option>
+						<option value="lelang-sedang-berjalan">Tender Sedang Berjalan</option>
+						<option value="lelang-sudah-selesai">Tender Sudah Selesai</option>
+						<option value="lelang-ulang">Tender Ulang</option>
+						<option value="lelang-gagal">Tender Gagal</option>
 						<option value="verifikasi-dokumen">Verifikasi Dokumen</option>
 				  </select>
 				</div>
@@ -122,8 +141,52 @@
 				  </select>
 				</div>
 			</div>
+			<div class="col-md-12">
+			<div class="form-group">
+				<label for="">Rekanan</label>
+				<input type="text" name="rekanan" class="form-control">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="">Nilai Kontrak</label>
+				<input type="text" class="form-control setMoney" name="nilai_kontrak"  placeholder="Rp" required>
+				<p class="validation-text">Nilai Inputan Melebihi Pagu</p>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="">Status Kontrak</label>
+				<select name="status_kontrak" id="" class="form-control">
+					<option value="blt">Belum Tanda Tangan Kontrak</option>
+					<option value="sdt">Sudah Tanda Tangan Kontrak</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="">Tanggal Mulai</label>
+				<input type="text" class="datepicker form-control" name="tanggal_mulai" placeholder="Tanggal Mulai">
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="">Tanggal Selesai</label>
+				<input type="text" class="datepicker form-control" name="tanggal_selesai" placeholder="Tanggal Selesai">
+			</div>
+		</div>
+	</div>
 		
+		
+		<div class="col-md-12">
+			<div class="form-group">
 		<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+	</div>
+	</div>
 	</div>
 	</form>
 
@@ -158,8 +221,9 @@
 	});
 
 	/* onjenis proses lelang  */
+	$("#status2").hide();
 	$("#jenis_proses_lelang").change(function() {
-		$("#status2").hide();
+		
 		var jenis_proses_lelang = $(this).val();
 		if(jenis_proses_lelang == "e-tendering") {
 			$("#hps").show();

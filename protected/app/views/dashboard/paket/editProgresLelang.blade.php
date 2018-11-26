@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-	<h2 class="menu__header">Progres Lelang</h2>
+	<h2 class="menu__header">Progres Tender</h2>
 	<!-- FORM EDIT PROGRES LELANG -->
 	<form action="{{URL::to('emonevpanel/progres-lelang/update')}}" method="POST" role="form" data-toggle="validator">
 		<!-- Row -->
@@ -40,7 +40,7 @@
 			<div class="col-md-6">
 				<!-- Input Paket lelang -->
 				<div class="form-group">
-					<label for="">Paket Lelang</label>
+					<label for="">Paket Tender</label>
 					<input type="text" class="form-control" value="{{$progres->lelang->paket->paket}}" disabled="">
 					<input type="hidden" value="{{$progres->lelang->id}}" name="lelang_id">
 					<input type="hidden" value="{{$progres->lelang->nilai_hps}}" id="limit_anggaran">

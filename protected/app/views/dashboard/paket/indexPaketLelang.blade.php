@@ -2,12 +2,12 @@
 
 @section('content')
 
-<h2 class="menu__header">Paket Lelang Perangkat Daerah</h2>
-<a href="{{URL::to('emonevpanel/paket-lelang/create')}}" class="btn btn-primary" style="float:right;">Tambah Paket Lelang</a>
+<h2 class="menu__header">Paket Tender Perangkat Daerah</h2>
+<a href="{{URL::to('emonevpanel/paket-lelang/create')}}" class="btn btn-primary" style="float:right;margin-top:10px;">Tambah Paket Tender</a>
 <!-- Sortir Tahun -->
 <div class="form-group form-inline">
 	<label for="">Tahun</label>
-	<select id="selectGetPaketTable" class="form-control" style="margin-bottom:30px;">
+	<select id="selectGetPaketTable" class="form-control" style="margin-bottom:10px;">
 		<option value="">------ Pilih Tahun ----------</option>
 		<!-- Menampilkan Semua SKPD -->
 		@foreach($Tahun as $tahun)

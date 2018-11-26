@@ -146,6 +146,13 @@ class PaketController extends BaseController {
 		$data = Input::all();
 		$data['nilai_hps'] = str_replace(['Rp','.'], '', Input::get('hps'));
 		DB::table('paket_lelang')->insert($data);
+		$data1['rekanan'] = Input::get('rekanan');
+		$data1['status_kontrak'] = Input::get('status_kontrak');
+		$data1['tanggal_mulai'] = Convert::tgl_ind_to_eng(Input::get('tanggal_mulai'));
+		$data1['tanggal_selesai'] = Convert::tgl_ind_to_eng(Input::get('tanggal_selesai'));
+		$data1['nilai_kontrak'] = str_replace(['Rp','.'], '', Input::get('nilai_kontrak'));
+
+		DB::table('progres_lelang')->insert($data1);
 		return Redirect::to('emonevpanel/paket-lelang');
 	}
 
@@ -166,6 +173,12 @@ class PaketController extends BaseController {
 		$data['nilai_hps'] = str_replace(['Rp','.'], '', Input::get('hps'));
 		$id = Input::get('id');
 		DB::table('paket_lelang')->where('id',$id)->update($data);
+		$data1['rekanan'] = Input::get('rekanan');
+		$data1['status_kontrak'] = Input::get('status_kontrak');
+		$data1['tanggal_mulai'] = Convert::tgl_ind_to_eng(Input::get('tanggal_mulai'));
+		$data1['tanggal_selesai'] = Convert::tgl_ind_to_eng(Input::get('tanggal_selesai'));
+		$data1['nilai_kontrak'] = str_replace(['Rp','.'], '', Input::get('nilai_kontrak'));
+		Progress::where('id',$id)->update($data1);
 		return Redirect::to('emonevpanel/paket-lelang');
 	}
 
@@ -197,6 +210,8 @@ class PaketController extends BaseController {
 	}
 
 	public function createProgresLelang() {
+		$status = "lelang-sudah-selesai,proses-selesai";
+		
 		$data['menu'] = 'progress';
 		$skpd_id = Auth::user()->pegawai->skpd->id;
 		$tahun_id = Tahun::where('tahun',date("Y"))->first()->id;

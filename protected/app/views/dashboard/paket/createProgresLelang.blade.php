@@ -6,7 +6,7 @@
 
 @section('content')
 
-<h2 class="menu__header">Progres Lelang</h2>
+<h2 class="menu__header">Progres Tender</h2>
 <!-- FORM ADD PROGRES LELANG -->
 <form action="" method="POST" role="form" data-toggle="validator">
 	<div class="row">
@@ -47,9 +47,9 @@
 		<div class="col-md-6">
 			<!-- Input Paket (From Json) -->
 			<div class="form-group">
-				<label for="">Paket Lelang</label>
+				<label for="">Paket Tender</label>
 				<select name="lelang_id" class="form-control selectpicker" data-live-search="true" id="changeLelang">
-					<option value="">---- Pilih Paket Lelang ----</option>
+					<option value="">---- Pilih Paket Tender ----</option>
 					@foreach($Lelang as $lelang)
 					<option value="{{$lelang->id}}" data-hps="{{$lelang->nilai_hps}}">{{$lelang->paket->paket}}</option>
 					@endforeach

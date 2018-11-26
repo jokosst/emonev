@@ -177,9 +177,9 @@
 			<div class="form-group">
 				<label for="">Metode</label>
 				<select name="metode" class="form-control">
-					<option @if($paket->metode == 'lelang-sederhana') selected @endif value="lelang-sederhana">Lelang Sederhana</option>
-					<option @if($paket->metode == 'lelang-terbatas') selected @endif value="lelang-terbatas">Lelang Terbatas</option>
-					<option @if($paket->metode == 'lelang-umum') selected @endif value="lelang-umum">Lelang Umum</option>
+					<option @if($paket->metode == 'lelang-sederhana') selected @endif value="lelang-sederhana">Tender Sederhana</option>
+					<option @if($paket->metode == 'lelang-terbatas') selected @endif value="lelang-terbatas">Tender Terbatas</option>
+					<option @if($paket->metode == 'lelang-umum') selected @endif value="lelang-umum">Tender Umum</option>
 					<option @if($paket->metode == 'pemilihan-langsung') selected @endif value="pemilihan-langsung">Pemilihan Langsung</option>
 					<option @if($paket->metode == 'pengadaan-langsung') selected @endif value="pengadaan-langsung">Pengadaan Langsung</option>
 					<option @if($paket->metode == 'penunjukan-langsung') selected @endif value="penunjukan-langsung">Penunjukan Langsung</option>
@@ -189,6 +189,9 @@
 					<option @if($paket->metode == 'swakelola-program') selected @endif value="swakelola-program">Swakelola Program</option>
 					<option @if($paket->metode == 'swakelola-rutin') selected @endif value="swakelola-rutin">Swakelola Rutin</option>
 					<option @if($paket->metode == 'e-purchasing') selected @endif value="e-purchasing">E-Purchasing</option>
+					<option @if($paket->metode == 'seleksi') selected @endif value="seleksi">Seleksi</option>
+					<option @if($paket->metode == 'tender') selected @endif value="tender">Tender</option>
+					<option @if($paket->metode == 'tender-cepat') selected @endif value="tender-cepat">Tender Cepat</option>
 				</select>
 			</div>
 			<!-- End Input Metode -->

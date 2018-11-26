@@ -1,8 +1,8 @@
 @extends('layout.dashboardLayout')
 
 @section('content')
-	<h2 class="menu__header">Detail Progres Lelang</h2>
-	<a href="{{URL::to('emonevpanel/progres-lelang/create')}}" class="btn btn-primary" style="float:right;">Tambah Progres Lelang</a>
+	<h2 class="menu__header">Detail Progres Tender</h2>
+	<a href="{{URL::to('emonevpanel/progres-lelang/create')}}" class="btn btn-primary" style="float:right;margin-top:10px;">Tambah Progres Tender</a>
 	<div class="content__block content__detail">
 		<div class="row">
 			<div class="col-md-2">
@@ -27,7 +27,7 @@
 				<p><span>:</span> {{Convert::tgl_eng_to_ind($progres->tanggal_selesai)}}</p>
 				<p><span>:</span> {{Convert::ubah_status_kontrak($progres->status_kontrak)}}</p>
 			</div>
-			<a href="{{URL::to('emonevpanel/progres-lelang/edit/'.$progres->id)}}" class="btn btn-warning" style="margin-top: 20px; margin-left:15px;">Edit Progres Lelang</a>
+			<a href="{{URL::to('emonevpanel/progres-lelang/edit/'.$progres->id)}}" class="btn btn-warning" style="margin-top: 20px; margin-left:15px;">Edit Progres Tender</a>
 		</div>
 	</div>
 @endsection

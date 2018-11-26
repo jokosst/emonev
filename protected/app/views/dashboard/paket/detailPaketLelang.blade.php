@@ -1,8 +1,8 @@
 @extends('layout.dashboardLayout')
 
 @section('content')
-	<h2 class="menu__header">Detail Paket Lelang</h2>
-	<a href="{{URL::to('emonevpanel/paket-lelang/update')}}" class="btn btn-primary" style="float:right;">Tambah Paket Lelang</a>
+	<h2 class="menu__header">Detail Paket Tender</h2>
+	<a href="{{URL::to('emonevpanel/paket-lelang/update')}}" class="btn btn-primary" style="float:right;margin-top:10px;">Tambah Paket Tender</a>
 	<div class="content__block content__detail">
 		<div class="row">
 			<div class="col-md-2">
@@ -25,7 +25,7 @@
 				<p><span>:</span> {{$lelang->tgl_bast}}</p>
 				<p><span>:</span> {{Convert::ubah_tanda_strip($lelang->status)}}</p>
 			</div>
-			<a href="{{URL::to('emonevpanel/paket-lelang/edit/'.$lelang->id)}}" class="btn btn-warning" style="margin-top: 20px; margin-left:15px;">Edit Paket Lelang</a>
+			<a href="{{URL::to('emonevpanel/paket-lelang/edit/'.$lelang->id)}}" class="btn btn-warning" style="margin-top: 20px; margin-left:15px;">Edit Paket Tender</a>
 		</div>
 	</div>
 @endsection
