@@ -89,7 +89,7 @@
 		
 			<div class="col-md-4">
 				<div class="form-group">
-					<label for="">Nomor Kontak</label>
+					<label for="">Nomor Kontrak</label>
 					<input type="text" name="nomor_kontak" class="form-control" placeholder="Nomor Kontak" required>
 				</div>
 			</div>
@@ -158,10 +158,11 @@
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-				<label for="">Status Kontrak</label>
+				<label for="">Progres Pekerjaan</label>
 				<select name="status_kontrak" id="" class="form-control">
-					<option value="blt">Belum Tanda Tangan Kontrak</option>
-					<option value="sdt">Sudah Tanda Tangan Kontrak</option>
+					<option value="blt">Belum </option>
+					<option value="sdt">Sedang Pelaksanaan</option>
+					<option value="sls">Selesai</option>
 				</select>
 			</div>
 		</div>

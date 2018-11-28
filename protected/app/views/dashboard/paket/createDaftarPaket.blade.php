@@ -33,7 +33,7 @@
 	<!-- ROW -->
 	
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<!-- Input Tahun -->
 			<div class="form-group">
 				<label for="">Tahun</label>
@@ -47,7 +47,7 @@
 		</div>
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<!-- Input KPA -->
 			<div class="form-group">
 				<label for="">PA/KPA/PPK</label>
@@ -90,7 +90,7 @@
 	<!-- ROW -->
 	
 		<!-- Col-md-6 -->
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<!-- Input Pagu -->
 			<div class="form-group">
 				<label for="">Pagu Paket</label>
@@ -101,7 +101,7 @@
 		</div>
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<!-- Input Kode Anggaran  -->
 			<div class="form-group">
 				<label for="">Kode Anggaran Paket</label>
@@ -115,7 +115,7 @@
 	<!-- ROW -->
 	
 		<!-- Col-md-4 -->
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<!-- Input Volume -->
 			<div class="form-group">
 				<label for="">Volume</label>
@@ -139,7 +139,7 @@
 	<!-- ROW -->
 	
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<!-- Input Hasil Kegiatan -->
 			<div class="form-group">
 				<label for="">Hasil Kegiatan</label>
@@ -152,8 +152,7 @@
 		</div>
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
-			<div class="row">
+		
 				<div class="col-md-12">
 			<!-- Input Kualifikasi Lelang -->
 			<div class="form-group" id="kualifikasi1">
@@ -174,8 +173,7 @@
 			</div>
 			<!-- End Input Kualifikasi Lelang -->
 		</div>
-	</div>
-	</div>
+	
 
 		<!-- End Col-md-6 -->
 	
@@ -183,7 +181,7 @@
 	<!-- ROW -->
 	
 		<!-- Col-md-6 -->
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<!-- Input Jenis Belanja Paket -->
 			<div class="form-group">
 				<label for="">Jenis Belanja Paket</label>
@@ -196,23 +194,17 @@
 		</div>
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
-		<div class="col-md-4">
+		<div class="col-md-12">
 			<!-- Input Metode -->
 			<div class="form-group">
-				<label for="">Metode</label>
+				<label for="">Metode Pemilihan Penyedia</label>
 				<select name="metode" class="form-control">
-					<option value="lelang-sederhana">Tender Sederhana</option>
-					<option value="lelang-terbatas">Tender Terbatas</option>
-					<option value="lelang-umum">Tender Umum</option>
-					<option value="pemilihan-langsung">Pemilihan Langsung</option>
+					
+					<option value="e-purchasing">E-Purchasing</option>
 					<option value="pengadaan-langsung">Pengadaan Langsung</option>
 					<option value="penunjukan-langsung">Penunjukan Langsung</option>
-					<option value="sayembara">Sayembara</option>
-					<option value="seleksi-sederhana">Seleksi Sederhana</option>
-					<option value="seleksi-umum">Seleksi Umum</option>
-					<option value="swakelola-program">Swakelola Program</option>
-					<option value="swakelola-rutin">Swakelola Rutin</option>
-					<option value="e-purchasing">E-Purchasing</option>
+					
+					
 					<option value="seleksi">Seleksi</option>
 					<option value="tender">Tender</option>
 					<option value="tender-cepat">Tender Cepat</option>
@@ -221,24 +213,13 @@
 			<!-- End Input Metode -->
 		</div>
 		<!-- End Col-md-6 -->
-		<div class="col-md-4">
-			<!-- Input Jenis Belanja Paket -->
-			<div class="form-group">
-				<label for="">pemilihan penyedia</label>
-				<select name="pemilihan_penyedia" class="form-control">
-					<option value="seleksi">Seleksi</option>
-					<option value="tender">Tender</option>
-					<option value="tender-cepat">Tender Cepat</option>
-				</select>
-			</div>
-			<!-- End Input Jenis Belanja Paket -->
-		</div>
+		
 	
 	<!-- End ROW -->
 	<!-- ROW -->
 	
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<!-- Input Jenis Pengadaan -->
 			<div class="form-group">
 				<label for="">Jenis Pengadaan</label>
@@ -253,7 +234,7 @@
 		</div>
 		<!-- End Col-md-6 -->
 		<!-- Col-md-6 -->
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<!-- Input lokasi -->
 			<div class="form-group">
 				<label for="">Lokasi</label>

@@ -93,9 +93,9 @@
 					<label for="">Sumber Dana</label>
 					<select class="form-control" name="sumber_dana">
 						<option value="APBD">APBD</option>
-						<option value="APBN">APBN</option>
+						
 						<option value="APBD-P">APBD-P</option>
-						<option value="APBN-P">APBN-P</option>
+						
 				  </select>
 				</div> <!-- End Input KPA -->
 			</div> <!-- End Col-4 -->
